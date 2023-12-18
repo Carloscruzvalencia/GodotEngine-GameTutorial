@@ -11,9 +11,19 @@ config_version=5
 [application]
 
 config/name="Niueduca-GameTutorial"
-run/main_scene="res://Mundo/nivel_1.tscn"
+run/main_scene="res://Escenas/Mundos/nivel_1.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[file_customization]
+
+folder_colors={
+"res://Escenas/Elementos/": "purple",
+"res://Escenas/Mundos/": "orange",
+"res://Escenas/Personajes/": "green",
+"res://Escenas/Personajes/Enemigos/": "red",
+"res://Escenas/Personajes/Principal/": "green"
+}
 
 [rendering]
 

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp7ps4tqf2sn7"]
+
+[ext_resource type="Texture2D" uid="uid://dirmcxq46wwwa" path="res://Tilemap/characters/tilemap-characters_packed.png" id="1_yg4yc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_veih8"]
+size = Vector2(18, 23.5)
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.75)
+shape = SubResource("RectangleShape2D_veih8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_yg4yc")
+hframes = 9
+vframes = 3
