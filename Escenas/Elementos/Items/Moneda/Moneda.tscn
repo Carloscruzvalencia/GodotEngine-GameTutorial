@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://dt6dutbc3b3e5"]
+
+[ext_resource type="Texture2D" uid="uid://couebfkfithyf" path="res://Tilemap/Items/Moneda.png" id="1_jvfj5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p66ag"]
+radius = 7.0
+
+[sub_resource type="Animation" id="Animation_octeq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_blvjx"]
+resource_name = "active"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ba8xa"]
+_data = {
+"RESET": SubResource("Animation_octeq"),
+"active": SubResource("Animation_blvjx")
+}
+
+[node name="Moneda" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_jvfj5")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = -1
+shape = SubResource("CircleShape2D_p66ag")
+debug_color = Color(0.858824, 0.192157, 0.756863, 0.419608)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ba8xa")
+}
+autoplay = "active"

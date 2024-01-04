@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://bjytth844yv6e"]
+
+[ext_resource type="Texture2D" uid="uid://bwijni1nm5dih" path="res://Tilemap/Items/Boton.png" id="2_ef1q4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oysij"]
+size = Vector2(14, 8)
+
+[sub_resource type="Animation" id="Animation_b1mbq"]
+resource_name = "Active"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_kdslw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ba8xa"]
+_data = {
+"Active": SubResource("Animation_b1mbq"),
+"RESET": SubResource("Animation_kdslw")
+}
+
+[node name="Boton" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_ef1q4")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = -1
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_oysij")
+debug_color = Color(0.858824, 0.192157, 0.756863, 0.419608)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ba8xa")
+}

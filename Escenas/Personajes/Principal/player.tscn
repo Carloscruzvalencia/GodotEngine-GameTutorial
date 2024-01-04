@@ -1,11 +1,72 @@
-[gd_scene load_steps=3 format=3 uid="uid://dp7ps4tqf2sn7"]
+[gd_scene load_steps=8 format=3 uid="uid://dp7ps4tqf2sn7"]
 
+[ext_resource type="Script" path="res://Escenas/Personajes/Principal/player.gd" id="1_67i2a"]
 [ext_resource type="Texture2D" uid="uid://dirmcxq46wwwa" path="res://Tilemap/characters/tilemap-characters_packed.png" id="1_yg4yc"]
+
+[sub_resource type="Animation" id="Animation_5y1ev"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_s2lpn"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ikc5v"]
+resource_name = "walk"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3m7fh"]
+_data = {
+"RESET": SubResource("Animation_5y1ev"),
+"idle": SubResource("Animation_s2lpn"),
+"walk": SubResource("Animation_ikc5v")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_veih8"]
 size = Vector2(18, 23.5)
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_67i2a")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_3m7fh")
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.75)

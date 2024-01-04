@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dirmcxq46wwwa"
-path="res://.godot/imported/tilemap-characters_packed.png-307fd1eb9012fa5bde1ac4747e9b5c5e.ctex"
+uid="uid://couebfkfithyf"
+path="res://.godot/imported/Moneda.png-edae86e3bdf097caeddefa82f807d271.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tilemap/Characters/tilemap-characters_packed.png"
-dest_files=["res://.godot/imported/tilemap-characters_packed.png-307fd1eb9012fa5bde1ac4747e9b5c5e.ctex"]
+source_file="res://Tilemap/Items/Moneda.png"
+dest_files=["res://.godot/imported/Moneda.png-edae86e3bdf097caeddefa82f807d271.ctex"]
 
 [params]
 

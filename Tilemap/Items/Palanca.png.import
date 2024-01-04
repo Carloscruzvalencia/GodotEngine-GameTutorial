@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dirmcxq46wwwa"
-path="res://.godot/imported/tilemap-characters_packed.png-307fd1eb9012fa5bde1ac4747e9b5c5e.ctex"
+uid="uid://dkhq647ts4eav"
+path="res://.godot/imported/Palanca.png-a779193eb731f304ebd5e30e923a5c81.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tilemap/Characters/tilemap-characters_packed.png"
-dest_files=["res://.godot/imported/tilemap-characters_packed.png-307fd1eb9012fa5bde1ac4747e9b5c5e.ctex"]
+source_file="res://Tilemap/Items/Palanca.png"
+dest_files=["res://.godot/imported/Palanca.png-a779193eb731f304ebd5e30e923a5c81.ctex"]
 
 [params]
 
